@@ -24,7 +24,7 @@ async def perform_operation(
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail="Кошелек не найден")
         elif str(e) == "Insufficient funds":
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="недостаточно средств")
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Insufficient funds")
         raise
     return {"uuid": wallet.uuid, "balance": wallet.balance}
 

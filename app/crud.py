@@ -27,7 +27,7 @@ async def update_balance(db: AsyncSession, wallet_uuid: UUID, amount: int, opera
         wallet.balance += amount
     elif operation_type == "WITHDRAW":
         if wallet.balance < amount:
-            raise ValueError("недостаточно средств")
+            raise ValueError("Insufficient funds")
         wallet.balance -= amount
 
     await db.commit()

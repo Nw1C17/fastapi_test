@@ -104,7 +104,7 @@ GET /api/v1/wallets/{uuid}
 Запуск тестов (локально, при активном Docker-контейнере с БД):
 ```bash
 pip install -r requirements.txt
-pytest tests/ -v
+docker-compose exec -e TEST_DATABASE_URL="postgresql+asyncpg://postgres:postgres@db:5432/wallet_db" app pytest tests/ -v
 ```
 
 Тесты покрывают:
